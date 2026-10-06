@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState, useRef } from 'react';
-import Image from 'next/image';
 import { Button } from '@/components/ui/Button';
 
 interface ImageUploadProps {
@@ -55,7 +54,8 @@ export function ImageUpload({ currentUrl, onUpload, label = 'Upload Image', clas
         className="relative w-32 h-32 rounded-lg border-2 border-dashed border-card-border hover:border-astog-green cursor-pointer overflow-hidden bg-black/50 transition-colors flex items-center justify-center group"
       >
         {preview ? (
-          <Image src={preview} alt="Preview" fill className="object-cover" />
+          // eslint-disable-next-line @next/next/no-img-element
+          <img src={preview} alt="Preview" className="object-cover w-full h-full" />
         ) : (
           <div className="text-center text-gray-500 group-hover:text-astog-green transition-colors">
             <svg className="w-8 h-8 mx-auto mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
