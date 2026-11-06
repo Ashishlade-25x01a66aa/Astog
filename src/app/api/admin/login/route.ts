@@ -20,14 +20,21 @@ export async function POST(req: Request) {
       .eq('email', email)
       .single();
 
-    if (error || !admin) {
-      return NextResponse.json({ error: 'Invalid credentials' }, { status: 401 });
+    if (error) {
+      if (error.code !== 'PGRST116') {
+        return NextResponse.json({ error: `Database error: ${error.message}` }, { status: 500 });
+      }
+      return NextResponse.json({ error: 'No admin found with this email' }, { status: 401 });
+    }
+
+    if (!admin) {
+      return NextResponse.json({ error: 'No admin found with this email' }, { status: 401 });
     }
 
     const passwordMatch = await bcrypt.compare(password, admin.password_hash);
 
     if (!passwordMatch) {
-      return NextResponse.json({ error: 'Invalid credentials' }, { status: 401 });
+      return NextResponse.json({ error: 'Incorrect password' }, { status: 401 });
     }
 
     const sessionData = { adminId: admin.id, email };
