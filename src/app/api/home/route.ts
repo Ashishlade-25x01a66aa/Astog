@@ -17,7 +17,7 @@ export async function GET() {
       throw error;
     }
 
-    return NextResponse.json({ data: data || { welcome_text: 'Welcome to ASTOG!', logo_url: null } });
+    return NextResponse.json({ data: data || { welcome_text: 'Welcome to ASTELOS!', logo_url: null } });
   } catch (err: any) {
     return NextResponse.json({ error: err.message }, { status: 500 });
   }

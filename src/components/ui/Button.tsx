@@ -17,7 +17,7 @@ export function Button({
   const baseClasses = 'inline-flex items-center justify-center rounded-md border font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-background';
   
   const variants = {
-    primary: 'border-astog-green text-astog-green hover:bg-astog-green/10 hover:shadow-[0_0_15px_var(--color-astog-green-glow)] focus:ring-astog-green',
+    primary: 'border-astelos-green text-astelos-green hover:bg-astelos-green/10 hover:shadow-[0_0_15px_var(--color-astelos-green-glow)] focus:ring-astelos-green',
     secondary: 'border-card-border text-foreground hover:bg-card-bg hover:border-gray-500 focus:ring-gray-500',
     danger: 'border-red-500 text-red-500 hover:bg-red-500/10 hover:shadow-[0_0_15px_rgba(239,68,68,0.5)] focus:ring-red-500',
   };

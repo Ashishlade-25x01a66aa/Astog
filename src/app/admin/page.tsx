@@ -46,9 +46,9 @@ export default function AdminPage() {
     return (
       <div className="min-h-screen flex items-center justify-center p-4">
         <Card className="w-full max-w-md relative overflow-hidden">
-          <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-astog-green via-astog-green-hover to-astog-green" />
+          <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-astelos-green via-astelos-green-hover to-astelos-green" />
           <h2 className="text-2xl font-bold text-white text-center mb-2 mt-2">Admin Login</h2>
-          <p className="text-gray-500 text-center text-sm mb-6">Sign in to manage ASTOG</p>
+          <p className="text-gray-500 text-center text-sm mb-6">Sign in to manage ASTELOS</p>
           {error && <div className="bg-red-500/10 border border-red-500 text-red-500 p-3 rounded-md mb-4 text-sm">{error}</div>}
           <form onSubmit={handleLogin} className="space-y-4">
             <div>
@@ -57,8 +57,8 @@ export default function AdminPage() {
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full bg-black border border-card-border rounded-md px-4 py-2.5 text-white focus:outline-none focus:ring-2 focus:ring-astog-green transition-all"
-                placeholder="admin@astog.com"
+                className="w-full bg-black border border-card-border rounded-md px-4 py-2.5 text-white focus:outline-none focus:ring-2 focus:ring-astelos-green transition-all"
+                placeholder="admin@astelos.com"
                 required
               />
             </div>
@@ -68,7 +68,7 @@ export default function AdminPage() {
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="w-full bg-black border border-card-border rounded-md px-4 py-2.5 text-white focus:outline-none focus:ring-2 focus:ring-astog-green transition-all"
+                className="w-full bg-black border border-card-border rounded-md px-4 py-2.5 text-white focus:outline-none focus:ring-2 focus:ring-astelos-green transition-all"
                 placeholder="••••••••"
                 required
               />
@@ -94,7 +94,7 @@ export default function AdminPage() {
       <div className="flex justify-between items-center mb-8">
         <div>
           <h1 className="text-3xl font-bold text-white">Admin Dashboard</h1>
-          <p className="text-gray-500 text-sm mt-1">Manage all ASTOG content</p>
+          <p className="text-gray-500 text-sm mt-1">Manage all ASTELOS content</p>
         </div>
         <Button variant="danger" onClick={handleLogout}>Logout</Button>
       </div>
@@ -107,7 +107,7 @@ export default function AdminPage() {
             onClick={() => setActiveTab(tab.key)}
             className={`flex-1 px-4 py-2.5 rounded-md text-sm font-medium transition-all whitespace-nowrap ${
               activeTab === tab.key
-                ? 'bg-astog-green text-black'
+                ? 'bg-astelos-green text-black'
                 : 'text-gray-400 hover:text-white hover:bg-card-border'
             }`}
           >
@@ -166,14 +166,14 @@ function HomeTab() {
           <input
             value={welcomeText}
             onChange={(e) => setWelcomeText(e.target.value)}
-            className="w-full bg-black border border-card-border rounded-md px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-astog-green"
+            className="w-full bg-black border border-card-border rounded-md px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-astelos-green"
           />
         </div>
         <div>
           <label className="block text-sm font-medium text-gray-300 mb-2">Logo</label>
           <ImageUpload currentUrl={logoUrl} onUpload={(url) => setLogoUrl(url)} label="Upload Logo" />
         </div>
-        {msg && <p className={`text-sm ${msg === 'Saved!' ? 'text-astog-green' : 'text-red-400'}`}>{msg}</p>}
+        {msg && <p className={`text-sm ${msg === 'Saved!' ? 'text-astelos-green' : 'text-red-400'}`}>{msg}</p>}
         <Button onClick={save} disabled={saving}>{saving ? 'Saving...' : 'Save Changes'}</Button>
       </div>
     </Card>
@@ -252,10 +252,10 @@ function AboutTab() {
         <div className="space-y-3">
           {entries.map((e) => (
             <Card key={e.id} className="flex flex-col sm:flex-row items-center gap-4">
-              {e.photo_url && <img src={e.photo_url} alt={e.name} className="w-16 h-16 rounded-full object-cover border border-astog-green" />}
+              {e.photo_url && <img src={e.photo_url} alt={e.name} className="w-16 h-16 rounded-full object-cover border border-astelos-green" />}
               <div className="flex-grow text-center sm:text-left">
                 <p className="text-white font-semibold">{e.name}</p>
-                <p className="text-astog-green text-sm">{e.role}</p>
+                <p className="text-astelos-green text-sm">{e.role}</p>
                 <span className="text-xs text-gray-500 bg-card-border px-2 py-0.5 rounded-full">{e.category}</span>
               </div>
               <div className="flex gap-2">
@@ -333,7 +333,7 @@ function SubOrgsTab() {
                 value={form.about_ceo}
                 onChange={(e) => setForm({ ...form, about_ceo: e.target.value })}
                 rows={3}
-                className="w-full bg-black border border-card-border rounded-md px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-astog-green resize-none"
+                className="w-full bg-black border border-card-border rounded-md px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-astelos-green resize-none"
               />
             </div>
             <div>
@@ -442,11 +442,11 @@ function EmployeesTab() {
         <div className="space-y-3">
           {employees.map((emp, i) => (
             <Card key={emp.id} className="flex flex-col sm:flex-row items-center gap-4">
-              <span className="w-8 h-8 bg-astog-green/20 text-astog-green rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">{i + 1}</span>
-              {emp.photo_url && <img src={emp.photo_url} alt={emp.name} className="w-14 h-14 rounded-full object-cover border border-astog-green" />}
+              <span className="w-8 h-8 bg-astelos-green/20 text-astelos-green rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">{i + 1}</span>
+              {emp.photo_url && <img src={emp.photo_url} alt={emp.name} className="w-14 h-14 rounded-full object-cover border border-astelos-green" />}
               <div className="flex-grow text-center sm:text-left">
                 <p className="text-white font-semibold">{emp.name}</p>
-                <p className="text-astog-green text-sm">{emp.role}</p>
+                <p className="text-astelos-green text-sm">{emp.role}</p>
                 <p className="text-gray-500 text-xs">ID: {emp.employee_id} · {emp.company}</p>
               </div>
               <div className="flex gap-2">
@@ -470,7 +470,7 @@ function InputField({ label, value, onChange, required, type = 'text' }: { label
         type={type}
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        className="w-full bg-black border border-card-border rounded-md px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-astog-green"
+        className="w-full bg-black border border-card-border rounded-md px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-astelos-green"
         required={required}
       />
     </div>
@@ -480,7 +480,7 @@ function InputField({ label, value, onChange, required, type = 'text' }: { label
 function LoadingSpinner() {
   return (
     <div className="flex items-center justify-center py-16">
-      <div className="w-8 h-8 border-2 border-astog-green border-t-transparent rounded-full animate-spin" />
+      <div className="w-8 h-8 border-2 border-astelos-green border-t-transparent rounded-full animate-spin" />
     </div>
   );
 }

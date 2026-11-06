@@ -34,7 +34,7 @@ export default function SubOrganisations() {
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <div className="w-8 h-8 border-2 border-astog-green border-t-transparent rounded-full animate-spin" />
+        <div className="w-8 h-8 border-2 border-astelos-green border-t-transparent rounded-full animate-spin" />
       </div>
     );
   }
@@ -60,8 +60,8 @@ export default function SubOrganisations() {
       ) : (
         <div className="space-y-6">
           {subOrgs.map((org, index) => (
-            <Card key={org.id} className="flex flex-col md:flex-row items-center md:items-start gap-6 hover:border-astog-green transition-colors">
-              <div className="flex-shrink-0 flex items-center justify-center bg-astog-green/10 rounded-full w-12 h-12 text-xl font-bold text-astog-green border border-astog-green">
+            <Card key={org.id} className="flex flex-col md:flex-row items-center md:items-start gap-6 hover:border-astelos-green transition-colors">
+              <div className="flex-shrink-0 flex items-center justify-center bg-astelos-green/10 rounded-full w-12 h-12 text-xl font-bold text-astelos-green border border-astelos-green">
                 {index + 1}
               </div>
               <div className="relative w-28 h-28 flex-shrink-0 rounded-lg overflow-hidden border border-card-border bg-black">
@@ -76,9 +76,9 @@ export default function SubOrganisations() {
               <div className="flex-grow text-center md:text-left">
                 <h3 className="text-2xl font-bold text-white mb-2">{org.name}</h3>
                 <div className="text-gray-300 text-sm leading-relaxed max-w-2xl space-y-1">
-                  <p><span className="font-semibold text-astog-green">CEO:</span> {org.ceo_name}</p>
-                  {org.about_ceo && <p><span className="font-semibold text-astog-green">About CEO:</span> {org.about_ceo}</p>}
-                  {org.founded_on && <p><span className="font-semibold text-astog-green">Founded On:</span> {new Date(org.founded_on).toLocaleDateString()}</p>}
+                  <p><span className="font-semibold text-astelos-green">CEO:</span> {org.ceo_name}</p>
+                  {org.about_ceo && <p><span className="font-semibold text-astelos-green">About CEO:</span> {org.about_ceo}</p>}
+                  {org.founded_on && <p><span className="font-semibold text-astelos-green">Founded On:</span> {new Date(org.founded_on).toLocaleDateString()}</p>}
                 </div>
                 <div className="mt-4">
                   <Link href={`/sub-organisations/${org.id}/achievements`}>

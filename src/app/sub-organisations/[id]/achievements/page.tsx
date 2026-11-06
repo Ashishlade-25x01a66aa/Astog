@@ -123,7 +123,7 @@ export default function AchievementsPage() {
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <div className="w-8 h-8 border-2 border-astog-green border-t-transparent rounded-full animate-spin" />
+        <div className="w-8 h-8 border-2 border-astelos-green border-t-transparent rounded-full animate-spin" />
       </div>
     );
   }
@@ -131,7 +131,7 @@ export default function AchievementsPage() {
   return (
     <div className="min-h-screen p-8 max-w-5xl mx-auto">
       <div className="mb-4">
-        <Link href="/sub-organisations" className="text-astog-green hover:text-astog-green-hover text-sm transition-colors">
+        <Link href="/sub-organisations" className="text-astelos-green hover:text-astelos-green-hover text-sm transition-colors">
           ← Back to Sub Organisations
         </Link>
       </div>
@@ -139,7 +139,7 @@ export default function AchievementsPage() {
       <div className="flex justify-between items-center mb-10">
         <div>
           <h1 className="text-4xl font-bold text-white">Achievements</h1>
-          {subOrg && <p className="text-astog-green mt-1 text-lg">{subOrg.name}</p>}
+          {subOrg && <p className="text-astelos-green mt-1 text-lg">{subOrg.name}</p>}
         </div>
         {isAdmin && (
           <Button onClick={() => setShowForm(!showForm)}>
@@ -158,7 +158,7 @@ export default function AchievementsPage() {
               <input
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
-                className="w-full bg-black border border-card-border rounded-md px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-astog-green"
+                className="w-full bg-black border border-card-border rounded-md px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-astelos-green"
                 required
               />
             </div>
@@ -168,7 +168,7 @@ export default function AchievementsPage() {
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
                 rows={3}
-                className="w-full bg-black border border-card-border rounded-md px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-astog-green resize-none"
+                className="w-full bg-black border border-card-border rounded-md px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-astelos-green resize-none"
               />
             </div>
             <Button type="submit" disabled={saving}>
@@ -195,13 +195,13 @@ export default function AchievementsPage() {
                   <input
                     value={editTitle}
                     onChange={(e) => setEditTitle(e.target.value)}
-                    className="w-full bg-black border border-card-border rounded-md px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-astog-green"
+                    className="w-full bg-black border border-card-border rounded-md px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-astelos-green"
                   />
                   <textarea
                     value={editDescription}
                     onChange={(e) => setEditDescription(e.target.value)}
                     rows={2}
-                    className="w-full bg-black border border-card-border rounded-md px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-astog-green resize-none"
+                    className="w-full bg-black border border-card-border rounded-md px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-astelos-green resize-none"
                   />
                   <div className="flex gap-2">
                     <Button size="sm" onClick={() => handleUpdate(a.id)}>Save</Button>
@@ -211,7 +211,7 @@ export default function AchievementsPage() {
               ) : (
                 <div className="flex items-start justify-between">
                   <div className="flex gap-4">
-                    <span className="flex-shrink-0 w-8 h-8 bg-astog-green/20 text-astog-green rounded-full flex items-center justify-center text-sm font-bold">
+                    <span className="flex-shrink-0 w-8 h-8 bg-astelos-green/20 text-astelos-green rounded-full flex items-center justify-center text-sm font-bold">
                       {i + 1}
                     </span>
                     <div>

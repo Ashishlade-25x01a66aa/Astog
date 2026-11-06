@@ -22,7 +22,7 @@ export async function decrypt(input: string): Promise<any> {
 
 export async function getSession() {
   const cookieStore = await cookies();
-  const session = cookieStore.get('astog_admin_session')?.value;
+  const session = cookieStore.get('astelos_admin_session')?.value || cookieStore.get('astog_admin_session')?.value;
   if (!session) return null;
   try {
     return await decrypt(session);

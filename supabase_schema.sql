@@ -1,4 +1,4 @@
--- Schema for ASTOG
+-- Schema for ASTELOS
 
 -- 1. admins table
 CREATE TABLE admins (
@@ -67,7 +67,7 @@ CREATE POLICY "Public Read Access for Storage" ON storage.objects
 FOR SELECT USING ( bucket_id = 'logos-and-photos' );
 
 -- Insert initial home content row
-INSERT INTO home_content (welcome_text, logo_url) VALUES ('Welcome to ASTOG!', null);
+INSERT INTO home_content (welcome_text, logo_url) VALUES ('Welcome to ASTELOS!', null);
 
 -- Enable RLS
 ALTER TABLE admins ENABLE ROW LEVEL SECURITY;

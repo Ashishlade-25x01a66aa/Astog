@@ -35,7 +35,7 @@ export default function Employees() {
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <div className="w-8 h-8 border-2 border-astog-green border-t-transparent rounded-full animate-spin" />
+        <div className="w-8 h-8 border-2 border-astelos-green border-t-transparent rounded-full animate-spin" />
       </div>
     );
   }
@@ -61,11 +61,11 @@ export default function Employees() {
       ) : (
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {employees.map((emp, index) => (
-            <Card key={emp.id} className="flex flex-col sm:flex-row items-center gap-5 relative hover:border-astog-green transition-colors">
-              <span className="flex-shrink-0 w-10 h-10 bg-astog-green/10 text-astog-green rounded-full flex items-center justify-center text-sm font-bold border border-astog-green/30">
+            <Card key={emp.id} className="flex flex-col sm:flex-row items-center gap-5 relative hover:border-astelos-green transition-colors">
+              <span className="flex-shrink-0 w-10 h-10 bg-astelos-green/10 text-astelos-green rounded-full flex items-center justify-center text-sm font-bold border border-astelos-green/30">
                 {index + 1}
               </span>
-              <div className="relative w-20 h-20 flex-shrink-0 rounded-full overflow-hidden border-2 border-astog-green shadow-[0_0_12px_rgba(16,185,129,0.2)]">
+              <div className="relative w-20 h-20 flex-shrink-0 rounded-full overflow-hidden border-2 border-astelos-green shadow-[0_0_12px_rgba(16,185,129,0.2)]">
                 {emp.photo_url ? (
                   <Image src={emp.photo_url} alt={emp.name} fill className="object-cover" />
                 ) : (
@@ -76,7 +76,7 @@ export default function Employees() {
               </div>
               <div className="flex-grow text-center sm:text-left">
                 <h3 className="text-lg font-bold text-white mb-0.5">{emp.name}</h3>
-                <p className="text-astog-green font-medium text-sm">{emp.role}</p>
+                <p className="text-astelos-green font-medium text-sm">{emp.role}</p>
                 <div className="text-gray-400 text-sm mt-1 space-y-0.5">
                   <p><span className="text-gray-500">ID:</span> {emp.employee_id}</p>
                   <p><span className="text-gray-500">Company:</span> {emp.company}</p>

@@ -8,7 +8,7 @@ import { Button } from '@/components/ui/Button';
 import { useAuth } from '@/lib/AuthContext';
 
 export default function Home() {
-  const [content, setContent] = useState<{ welcome_text: string; logo_url: string | null }>({ welcome_text: 'Welcome to ASTOG!', logo_url: null });
+  const [content, setContent] = useState<{ welcome_text: string; logo_url: string | null }>({ welcome_text: 'Welcome to ASTELOS!', logo_url: null });
   const [loading, setLoading] = useState(true);
   const { isAdmin } = useAuth();
 
@@ -25,7 +25,7 @@ export default function Home() {
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <div className="w-8 h-8 border-2 border-astog-green border-t-transparent rounded-full animate-spin" />
+        <div className="w-8 h-8 border-2 border-astelos-green border-t-transparent rounded-full animate-spin" />
       </div>
     );
   }
@@ -34,8 +34,8 @@ export default function Home() {
     <div className="min-h-screen p-4 sm:p-8 flex flex-col items-center justify-center">
       <Card className="w-full max-w-4xl text-center space-y-8 py-12 px-8 relative overflow-hidden">
         {/* Green accent border */}
-        <div className="absolute inset-0 border-[2px] border-astog-green/20 rounded-xl pointer-events-none" />
-        <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-astog-green to-transparent" />
+        <div className="absolute inset-0 border-[2px] border-astelos-green/20 rounded-xl pointer-events-none" />
+        <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-astelos-green to-transparent" />
 
         {/* Admin link */}
         {isAdmin && (
@@ -53,8 +53,8 @@ export default function Home() {
         
         {/* Logo */}
         {content.logo_url && (
-          <div className="relative w-40 h-40 mx-auto rounded-full overflow-hidden border-2 border-astog-green shadow-[0_0_30px_rgba(16,185,129,0.3)]">
-            <Image src={content.logo_url} alt="ASTOG Logo" fill className="object-cover" />
+          <div className="relative w-40 h-40 mx-auto rounded-full overflow-hidden border-2 border-astelos-green shadow-[0_0_30px_rgba(16,185,129,0.3)]">
+            <Image src={content.logo_url} alt="ASTELOS Logo" fill className="object-cover" />
           </div>
         )}
 

@@ -34,7 +34,7 @@ export async function POST(req: Request) {
     const sessionToken = await encrypt(sessionData);
 
     const cookieStore = await cookies();
-    cookieStore.set('astog_admin_session', sessionToken, {
+    cookieStore.set('astelos_admin_session', sessionToken, {
       httpOnly: true,
       secure: process.env.NODE_ENV === 'production',
       sameSite: 'lax',

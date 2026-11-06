@@ -15,8 +15,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "ASTOG",
-  description: "ASTOG Web Application",
+  title: "ASTELOS",
+  description: "ASTELOS Web Application",
 };
 
 export default function RootLayout({

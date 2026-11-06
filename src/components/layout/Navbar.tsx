@@ -21,7 +21,7 @@ export function Navbar() {
           <div className="flex items-center gap-8">
             <Link href="/" className="flex-shrink-0">
               <span className="text-xl font-bold tracking-wider text-white">
-                ASTOG
+                ASTELOS
               </span>
             </Link>
             <div className="hidden md:block">
@@ -34,7 +34,7 @@ export function Navbar() {
                       href={link.href}
                       className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
                         isActive 
-                          ? 'text-astog-green bg-astog-green/10' 
+                          ? 'text-astelos-green bg-astelos-green/10' 
                           : 'text-gray-300 hover:text-white hover:bg-card-border'
                       }`}
                     >

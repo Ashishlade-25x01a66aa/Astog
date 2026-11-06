@@ -33,7 +33,7 @@ export default function About() {
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <div className="w-8 h-8 border-2 border-astog-green border-t-transparent rounded-full animate-spin" />
+        <div className="w-8 h-8 border-2 border-astelos-green border-t-transparent rounded-full animate-spin" />
       </div>
     );
   }
@@ -59,8 +59,8 @@ export default function About() {
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {entries.map(entry => (
-            <Card key={entry.id} className="flex flex-col items-center text-center hover:border-astog-green transition-colors">
-              <div className="relative w-32 h-32 mb-4 rounded-full overflow-hidden border-2 border-astog-green shadow-[0_0_15px_rgba(16,185,129,0.2)]">
+            <Card key={entry.id} className="flex flex-col items-center text-center hover:border-astelos-green transition-colors">
+              <div className="relative w-32 h-32 mb-4 rounded-full overflow-hidden border-2 border-astelos-green shadow-[0_0_15px_rgba(16,185,129,0.2)]">
                 {entry.photo_url ? (
                   <Image src={entry.photo_url} alt={entry.name} fill className="object-cover" />
                 ) : (
@@ -70,7 +70,7 @@ export default function About() {
                 )}
               </div>
               <h3 className="text-xl font-bold text-white">{entry.name}</h3>
-              <p className="text-astog-green font-medium mb-1">{entry.role}</p>
+              <p className="text-astelos-green font-medium mb-1">{entry.role}</p>
               <span className="px-3 py-1 bg-card-border rounded-full text-xs text-gray-300 mt-2">{entry.category}</span>
             </Card>
           ))}

@@ -51,13 +51,13 @@ export function ImageUpload({ currentUrl, onUpload, label = 'Upload Image', clas
     <div className={`flex flex-col items-center gap-3 ${className}`}>
       <div
         onClick={() => fileInputRef.current?.click()}
-        className="relative w-32 h-32 rounded-lg border-2 border-dashed border-card-border hover:border-astog-green cursor-pointer overflow-hidden bg-black/50 transition-colors flex items-center justify-center group"
+        className="relative w-32 h-32 rounded-lg border-2 border-dashed border-card-border hover:border-astelos-green cursor-pointer overflow-hidden bg-black/50 transition-colors flex items-center justify-center group"
       >
         {preview ? (
           // eslint-disable-next-line @next/next/no-img-element
           <img src={preview} alt="Preview" className="object-cover w-full h-full" />
         ) : (
-          <div className="text-center text-gray-500 group-hover:text-astog-green transition-colors">
+          <div className="text-center text-gray-500 group-hover:text-astelos-green transition-colors">
             <svg className="w-8 h-8 mx-auto mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
             </svg>
@@ -66,7 +66,7 @@ export function ImageUpload({ currentUrl, onUpload, label = 'Upload Image', clas
         )}
         {uploading && (
           <div className="absolute inset-0 bg-black/70 flex items-center justify-center">
-            <div className="w-6 h-6 border-2 border-astog-green border-t-transparent rounded-full animate-spin" />
+            <div className="w-6 h-6 border-2 border-astelos-green border-t-transparent rounded-full animate-spin" />
           </div>
         )}
       </div>
