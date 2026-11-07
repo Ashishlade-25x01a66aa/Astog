@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --background: #050505;
+  --background: #06080f;
   --foreground: #f3f4f6;
 }
 
@@ -11,14 +11,26 @@
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   
-  --color-astelos-green: #10b981;
-  --color-astelos-green-hover: #34d399;
-  --color-astelos-green-glow: rgba(16, 185, 129, 0.4);
-  --color-astog-green: #10b981;
-  --color-astog-green-hover: #34d399;
-  --color-astog-green-glow: rgba(16, 185, 129, 0.4);
-  --color-card-bg: #111827;
-  --color-card-border: #1f2937;
+  --color-astelos-blue: #2563eb;
+  --color-astelos-blue-hover: #3b82f6;
+  --color-astelos-purple: #7c3aed;
+  --color-astelos-purple-hover: #8b5cf6;
+  --color-astelos-magenta: #db2777;
+  --color-astelos-magenta-hover: #ec4899;
+  
+  --color-astelos-primary: #7c3aed;
+  --color-astelos-primary-hover: #8b5cf6;
+  --color-astelos-primary-glow: rgba(124, 58, 237, 0.4);
+
+  --color-astelos-green: #8b5cf6;
+  --color-astelos-green-hover: #a78bfa;
+  --color-astelos-green-glow: rgba(139, 92, 246, 0.4);
+  --color-astog-green: #8b5cf6;
+  --color-astog-green-hover: #a78bfa;
+  --color-astog-green-glow: rgba(139, 92, 246, 0.4);
+  
+  --color-card-bg: #0c101d;
+  --color-card-border: #1a2238;
 }
 
 body {
@@ -37,13 +49,13 @@ body {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #050505;
+  background: #06080f;
 }
 ::-webkit-scrollbar-thumb {
-  background: #1f2937;
+  background: #1a2238;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #10b981;
+  background: #7c3aed;
 }
 

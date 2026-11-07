@@ -25,7 +25,7 @@ export default function Home() {
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <div className="w-8 h-8 border-2 border-astelos-green border-t-transparent rounded-full animate-spin" />
+        <div className="w-8 h-8 border-2 border-purple-500 border-t-transparent rounded-full animate-spin" />
       </div>
     );
   }
@@ -33,9 +33,9 @@ export default function Home() {
   return (
     <div className="min-h-screen p-4 sm:p-8 flex flex-col items-center justify-center">
       <Card className="w-full max-w-4xl text-center space-y-8 py-12 px-8 relative overflow-hidden">
-        {/* Green accent border */}
-        <div className="absolute inset-0 border-[2px] border-astelos-green/20 rounded-xl pointer-events-none" />
-        <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-astelos-green to-transparent" />
+        {/* Accent border and gradient top bar matching logo */}
+        <div className="absolute inset-0 border-[2px] border-purple-500/20 rounded-xl pointer-events-none" />
+        <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600" />
 
         {/* Admin link */}
         {isAdmin && (
@@ -47,16 +47,22 @@ export default function Home() {
         )}
 
         {/* Welcome heading */}
-        <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-white animate-[fadeIn_0.6s_ease-out]">
+        <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight bg-gradient-to-r from-blue-400 via-purple-300 to-pink-400 bg-clip-text text-transparent animate-[fadeIn_0.6s_ease-out]">
           {content.welcome_text}
         </h1>
         
         {/* Logo */}
-        {content.logo_url && (
-          <div className="relative w-40 h-40 mx-auto rounded-full overflow-hidden border-2 border-astelos-green shadow-[0_0_30px_rgba(16,185,129,0.3)]">
-            <Image src={content.logo_url} alt="ASTELOS Logo" fill className="object-cover" />
+        <div className="relative mx-auto inline-block p-4 rounded-2xl bg-white shadow-[0_0_35px_rgba(124,58,237,0.35)]">
+          <div className="relative w-64 h-28 sm:w-80 sm:h-36">
+            <Image 
+              src={content.logo_url || '/astelos-logo.png'} 
+              alt="ASTELOS Logo" 
+              fill 
+              className="object-contain" 
+              priority 
+            />
           </div>
-        )}
+        </div>
 
         {/* Navigation buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center pt-8">

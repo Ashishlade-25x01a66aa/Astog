@@ -33,7 +33,7 @@ export default function About() {
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <div className="w-8 h-8 border-2 border-astelos-green border-t-transparent rounded-full animate-spin" />
+        <div className="w-8 h-8 border-2 border-purple-500 border-t-transparent rounded-full animate-spin" />
       </div>
     );
   }
@@ -41,7 +41,10 @@ export default function About() {
   return (
     <div className="min-h-screen p-8 max-w-7xl mx-auto">
       <div className="flex justify-between items-center mb-10">
-        <h1 className="text-4xl font-bold text-white">About Us</h1>
+        <div>
+          <h1 className="text-4xl font-bold text-white">About Us</h1>
+          <div className="h-1 w-16 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 rounded-full mt-2" />
+        </div>
         {isAdmin && (
           <Link href="/admin">
             <Button>+ New One</Button>
@@ -59,8 +62,8 @@ export default function About() {
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {entries.map(entry => (
-            <Card key={entry.id} className="flex flex-col items-center text-center hover:border-astelos-green transition-colors">
-              <div className="relative w-32 h-32 mb-4 rounded-full overflow-hidden border-2 border-astelos-green shadow-[0_0_15px_rgba(16,185,129,0.2)]">
+            <Card key={entry.id} className="flex flex-col items-center text-center hover:border-purple-500/50 hover:shadow-[0_0_25px_rgba(124,58,237,0.25)] transition-all">
+              <div className="relative w-32 h-32 mb-4 rounded-full overflow-hidden border-2 border-purple-500 shadow-[0_0_20px_rgba(124,58,237,0.3)]">
                 {entry.photo_url ? (
                   <Image src={entry.photo_url} alt={entry.name} fill className="object-cover" />
                 ) : (
@@ -70,8 +73,8 @@ export default function About() {
                 )}
               </div>
               <h3 className="text-xl font-bold text-white">{entry.name}</h3>
-              <p className="text-astelos-green font-medium mb-1">{entry.role}</p>
-              <span className="px-3 py-1 bg-card-border rounded-full text-xs text-gray-300 mt-2">{entry.category}</span>
+              <p className="text-purple-400 font-medium mb-1">{entry.role}</p>
+              <span className="px-3 py-1 bg-purple-950/40 border border-purple-800/40 rounded-full text-xs text-purple-200 mt-2">{entry.category}</span>
             </Card>
           ))}
         </div>

@@ -43,6 +43,7 @@ CREATE TABLE achievements (
     sub_org_id UUID REFERENCES sub_organisations(id) ON DELETE CASCADE,
     title TEXT NOT NULL,
     description TEXT,
+    image_url TEXT,
     created_at TIMESTAMP WITH TIME ZONE DEFAULT timezone('utc'::text, now()) NOT NULL
 );
 
