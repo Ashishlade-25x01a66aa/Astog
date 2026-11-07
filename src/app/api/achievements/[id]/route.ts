@@ -12,12 +12,46 @@ export async function PUT(req: Request, { params }: { params: Promise<{ id: stri
     const body = await req.json();
     const { id } = await params;
 
-    const { data, error } = await supabase
+    const imageUrls = Array.isArray(body.image_urls) ? body.image_urls : (body.image_url ? [body.image_url] : []);
+    const primaryUrl = imageUrls[0] || body.image_url || null;
+
+    const fullPayload = {
+      ...body,
+      image_urls: imageUrls,
+      image_url: primaryUrl,
+    };
+
+    let { data, error } = await supabase
       .from('achievements')
-      .update(body)
+      .update(fullPayload)
       .eq('id', id)
       .select()
       .single();
+
+    if (error && (error.code === 'PGRST204' || error.code === '42703')) {
+      const { image_urls: _, ...singlePayload } = fullPayload;
+      const retry1 = await supabase
+        .from('achievements')
+        .update(singlePayload)
+        .eq('id', id)
+        .select()
+        .single();
+
+      if (!retry1.error) {
+        return NextResponse.json({ data: retry1.data });
+      }
+
+      const { image_url: __, ...corePayload } = singlePayload;
+      const retry2 = await supabase
+        .from('achievements')
+        .update(corePayload)
+        .eq('id', id)
+        .select()
+        .single();
+
+      if (retry2.error) throw retry2.error;
+      return NextResponse.json({ data: retry2.data });
+    }
 
     if (error) throw error;
     return NextResponse.json({ data });

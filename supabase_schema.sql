@@ -44,6 +44,7 @@ CREATE TABLE achievements (
     title TEXT NOT NULL,
     description TEXT,
     image_url TEXT,
+    image_urls TEXT[] DEFAULT '{}',
     created_at TIMESTAMP WITH TIME ZONE DEFAULT timezone('utc'::text, now()) NOT NULL
 );
 
